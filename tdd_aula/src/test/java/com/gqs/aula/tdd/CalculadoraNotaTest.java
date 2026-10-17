@@ -49,10 +49,4 @@ void deveRejeitarA3MaiorQue40() {
     assertThrows(IllegalArgumentException.class,
         () -> calc.calcularNotaFinal(20, 20, 45));
 }
-@Test
-void MaximasValem() {
-    CalculadoraNota calc = new CalculadoraNota();
-    assertThrows(IllegalArgumentException.class,
-        () -> calc.calcularNotaFinal(30, 30, 40));
-}
 }
