@@ -33,22 +33,23 @@ assertFalse(calc.estaAprovadoPorNota(69));
 }
 @Test 
 void deveRejeitarA1MaiorQue30() {
-CalculadoraNota calc = new CalculadoraNota();
-assertThrows(IllegalArgumentException.class,
-() -> calc.calcularNotaFinal(35, 20, 30));
+    CalculadoraNota calc = new CalculadoraNota();
+    assertThrows(IllegalArgumentException.class,
+        () -> calc.calcularNotaFinal(35, 20, 30));
 }
 @Test 
-void deveRejeitarA2MaiorQue30() {
-CalculadoraNota calc = new CalculadoraNota();
-assertThrows(IllegalArgumentException.class,
-() -> calc.calcularNotaFinal(20, 35, 30));
+    void deveRejeitarA2MaiorQue30() {
+    CalculadoraNota calc = new CalculadoraNota();
+    assertThrows(IllegalArgumentException.class,
+        () -> calc.calcularNotaFinal(20, 35, 30));
 }
 @Test 
 void deveRejeitarA3MaiorQue40() {
-CalculadoraNota calc = new CalculadoraNota();
-assertThrows(IllegalArgumentException.class,
-() -> calc.calcularNotaFinal(20, 20, 45));
+    CalculadoraNota calc = new CalculadoraNota();
+    assertThrows(IllegalArgumentException.class,
+        () -> calc.calcularNotaFinal(20, 20, 45));
 }
+@Test
 void MaximasValem() {
 CalculadoraNota calc = new CalculadoraNota();
 assertThrows(IllegalArgumentException.class,
