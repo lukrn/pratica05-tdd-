@@ -25,11 +25,10 @@ nomeAvaliacao + " deve estar entre 0 e " + notaMaxima);
 }
 }
 public String situacao(double notaFinal, double frequencia) // "APROVADO" ou "REPROVADO"
-{
-if (estaAprovadoPorNota(notaFinal) && frequencia >= 80) {
-return "APROVADO";
-} else {
-return "REPROVADO";
+{ if (notaFinal >= NOTA_MINIMA_APROVACAO && frequencia >= 75) {
+        return "APROVADO";
+    }else {
+    return "REPROVADO";
 }
 }
 }
