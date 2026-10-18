@@ -108,21 +108,21 @@ void naoDevePermitirAIComNotaBaixa() {
 void deveSubstituirA1QuandoForAMenor() {
     CalculadoraNota calc = new CalculadoraNota();
 
-    assertEquals(70.0, calc.aplicarAI(10, 20, 30, 25));
+    assertEquals(75.0, calc.aplicarAI(10, 20, 30, 25));
 }
 
 @Test
 void deveSubstituirA2QuandoForAMenor() {
     CalculadoraNota calc = new CalculadoraNota();
 
-    assertEquals(45.0, calc.aplicarAI(20, 10, 30, 25));
+    assertEquals(75.0, calc.aplicarAI(20, 10, 30, 25));
 }
 
 @Test
 void naoDeveSubstituirQuandoAIForBaixa() {
     CalculadoraNota calc = new CalculadoraNota();
 
-    assertEquals(30.0, calc.aplicarAI(10, 20, 30, 5));
+    assertEquals(60.0, calc.aplicarAI(10, 20, 30, 5));
 }
 
 @Test
@@ -130,14 +130,14 @@ void deveRejeitarAIInvalida() {
     CalculadoraNota calc = new CalculadoraNota();
 
     assertThrows(IllegalArgumentException.class,
-        () -> calc.aplicarAI(30, 30, 40, 30));
+        () -> calc.aplicarAI(10, 20, 30, 31));
 }
 
 @Test
 void naoDeveSubstituirQuandoAIForIgualAMenorNota() {
     CalculadoraNota calc = new CalculadoraNota();
 
-    assertEquals(67.0, calc.aplicarAI(10, 20, 30, 10));
+    assertEquals(60.0, calc.aplicarAI(10, 20, 30, 10));
 }
 
 }
