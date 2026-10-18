@@ -44,11 +44,11 @@ public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
 
     return notaInsuficiente && frequenciaSuficiente && somaSuficiente;
 }
-public double aplicarAI(double a1, double a2, double a3, double notaAI) // nova nota final
-{
+public double aplicarAI(double a1, double a2, double a3, double notaAI) {
     validarNota(notaAI, 30, "AI");
-    if (notaAI > a1 && notaAI > a2) {
-        if (a1 < a2) {
+    double menorNota = Math.min(a1, a2);
+    if (notaAI > menorNota) {
+        if (a1 == menorNota) {
             a1 = notaAI;
         } else {
             a2 = notaAI;
