@@ -49,30 +49,28 @@ void deveRejeitarA3MaiorQue40() {
     assertThrows(IllegalArgumentException.class,
         () -> calc.calcularNotaFinal(20, 20, 45));
 }
-@Test 
-void deveAprovarComNotaEFrequenciaSuficientes() {
+
+@Test
+void deveAprovarComNotaEfrequenciaSuficientes() {
     CalculadoraNota calc = new CalculadoraNota();
-    String resultado = calc.situacao(80, 90);
-    assertEquals("APROVADO", resultado);
+
+    assertEquals("APROVADO", calc.situacao(69, 75));
 }
-@Test 
-void deveReprovarComNotaBaixa() {
+
+@Test
+void deveReprovarPorNotaQuandoFrequenciaESuficiente() {
     CalculadoraNota calc = new CalculadoraNota();
-    String resultado = calc.situacao(60, 90);
-    assertEquals("REPROVADO", resultado);
+
+    assertEquals("REPROVADO POR NOTA", calc.situacao(69, 75));
 }
-@Test 
-void deveReprovarPorFrequenciaMesmoComNotaAlta() {
+
+@Test
+void deveReprovarPorFaltaMesmoComNotaAlta() {
     CalculadoraNota calc = new CalculadoraNota();
-    String resultado = calc.situacao(95, 74);
-    assertEquals("REPROVADO", resultado);
+
+    assertEquals("REPROVADO POR FALTA", calc.situacao(90, 60));
 }
-@Test 
-void deveAprovarComFrequenciaExatamente75() {
-    CalculadoraNota calc = new CalculadoraNota();
-    String resultado = calc.situacao(70, 75);
-    assertEquals("APROVADO", resultado);
-}
+
 @Test
 void devePermitirAIComNotaBaixaEFrequenciaSuficiente() {
     CalculadoraNota calc = new CalculadoraNota();
@@ -139,5 +137,4 @@ void naoDeveSubstituirQuandoAIForIgualAMenorNota() {
 
     assertEquals(60.0, calc.aplicarAI(10, 20, 30, 10));
 }
-
 }
