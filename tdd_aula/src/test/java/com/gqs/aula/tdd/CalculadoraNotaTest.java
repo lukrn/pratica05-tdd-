@@ -77,30 +77,30 @@ void deveAprovarComFrequenciaExatamente75() {
 void devePermitirAIComNotaBaixaEFrequenciaSuficiente() {
     CalculadoraNota calc = new CalculadoraNota();
     boolean resultado = calc.podeFazerAI(10, 20, 30, 80);
-    assertFalse(resultado);
+    assertTrue(resultado);
 }
 @Test 
 void devePermitirAICOmNotaBaixaExatamenteEFrequenciaSuficiente() {
     CalculadoraNota calc = new CalculadoraNota();
     boolean resultado = calc.podeFazerAI(10, 5, 30, 80);
-    assertFalse(resultado);
+    assertTrue(resultado);
 }
 @Test 
 void naoDevePermitirAIComNotaAlta() {
     CalculadoraNota calc = new CalculadoraNota();
     boolean resultado = calc.podeFazerAI(25, 25, 30, 80);
-    assertTrue(resultado);
+    assertFalse(resultado);
 }
 @Test
 void naoDevePermitirAIComFrequenciaInsuficiente() {
     CalculadoraNota calc = new CalculadoraNota();
     boolean resultado = calc.podeFazerAI(10, 20, 30, 70);
-    assertTrue(resultado);
+    assertFalse(resultado);
 }
 @Test
 void naoDevePermitirAIComNotaBaixa() {
     CalculadoraNota calc = new CalculadoraNota();
     boolean resultado = calc.podeFazerAI(5, 5, 30, 80);
-    assertTrue(resultado);
+    assertFalse(resultado);
 }
 }
