@@ -17,15 +17,19 @@ public static final double NOTA_MINIMA_APROVACAO = 70;
 public boolean estaAprovadoPorNota(double notaFinal) {
 return notaFinal >= NOTA_MINIMA_APROVACAO;
 }
+public static final double FREQUENCIA_MINIMA_APROVACAO = 75;
+
+public boolean estaAprovadoPorFrequencia(double frequencia) {
+return frequencia >= FREQUENCIA_MINIMA_APROVACAO;
+}
 private void validarNota(double nota, double notaMaxima, String nomeAvaliacao) {
 if (nota < 0 || nota > notaMaxima) {
 throw new IllegalArgumentException(
 nomeAvaliacao + " deve estar entre 0 e " + notaMaxima);
-
 }
 }
 public String situacao(double notaFinal, double frequencia) // "APROVADO" ou "REPROVADO"
-{ if (notaFinal >= NOTA_MINIMA_APROVACAO && frequencia >= 75) {
+{ if (notaFinal >= NOTA_MINIMA_APROVACAO && frequencia >= FREQUENCIA_MINIMA_APROVACAO) {
         return "APROVADO";
     }else {
     return "REPROVADO";
