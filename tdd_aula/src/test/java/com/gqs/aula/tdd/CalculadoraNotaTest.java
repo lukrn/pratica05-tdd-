@@ -54,7 +54,7 @@ void deveRejeitarA3MaiorQue40() {
 void deveAprovarComNotaEfrequenciaSuficientes() {
     CalculadoraNota calc = new CalculadoraNota();
 
-    assertEquals("APROVADO", calc.situacao(69, 75));
+    assertEquals("APROVADO", calc.situacao(70, 75));
 }
 
 @Test
@@ -69,6 +69,12 @@ void deveReprovarPorFaltaMesmoComNotaAlta() {
     CalculadoraNota calc = new CalculadoraNota();
 
     assertEquals("REPROVADO POR FALTA", calc.situacao(90, 60));
+}
+@Test
+void deveReprovarPorFaltaMesmoComNotaBaixa() {
+    CalculadoraNota calc = new CalculadoraNota();
+
+    assertEquals("REPROVADO POR FALTA", calc.situacao(50, 60));
 }
 
 @Test

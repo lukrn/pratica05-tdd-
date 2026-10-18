@@ -28,12 +28,17 @@ throw new IllegalArgumentException(
 nomeAvaliacao + " deve estar entre 0 e " + notaMaxima);
 }
 }
-public String situacao(double notaFinal, double frequencia) // "APROVADO" ou "REPROVADO"
-{ if (notaFinal >= NOTA_MINIMA_APROVACAO && frequencia >= FREQUENCIA_MINIMA_APROVACAO) {
-        return "APROVADO";
-    }else {
-    return "REPROVADO";
-}
+
+public String situacao(double notaFinal, double frequencia) {
+    if (frequencia < FREQUENCIA_MINIMA_APROVACAO) {
+        return "REPROVADO POR FALTA";
+    }
+
+    if (notaFinal < NOTA_MINIMA_APROVACAO) {
+        return "REPROVADO POR NOTA";
+    }
+
+    return "APROVADO";
 }
 public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
     double notaFinal = calcularNotaFinal(a1, a2, a3);
