@@ -44,4 +44,16 @@ public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
 
     return notaInsuficiente && frequenciaSuficiente && somaSuficiente;
 }
+public double aplicarAI(double a1, double a2, double a3, double notaAI) // nova nota final
+{
+    validarNota(notaAI, 30, "AI");
+    if (notaAI > a1 && notaAI > a2) {
+        if (a1 < a2) {
+            a1 = notaAI;
+        } else {
+            a2 = notaAI;
+        }
+    }
+    return calcularNotaFinal(a1, a2, a3);
+}
 }
