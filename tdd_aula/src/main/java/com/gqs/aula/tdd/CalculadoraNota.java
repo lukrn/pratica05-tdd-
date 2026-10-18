@@ -35,4 +35,10 @@ public String situacao(double notaFinal, double frequencia) // "APROVADO" ou "RE
     return "REPROVADO";
 }
 }
+public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
+    double notaFinal = a1 + a2 + a3;
+    return notaFinal < NOTA_MINIMA_APROVACAO
+            && frequencia >= FREQUENCIA_MINIMA_APROVACAO
+            && (a1 + a3 >= 40 || a2 + a3 >= 40);
+}
 }
